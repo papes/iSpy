@@ -13,6 +13,8 @@
 		104D0B3119CDD5C6005EAB07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 104D0B3019CDD5C6005EAB07 /* Images.xcassets */; };
 		104D0B3419CDD5C6005EAB07 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104D0B3219CDD5C6005EAB07 /* LaunchScreen.xib */; };
 		104D0B4019CDD5C6005EAB07 /* iSpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104D0B3F19CDD5C6005EAB07 /* iSpyTests.swift */; };
+		10E0338319F98A910063D3F5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0338219F98A910063D3F5 /* SwiftyJSON.swift */; };
+		10E0338419F98A910063D3F5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0338219F98A910063D3F5 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 		104D0B3919CDD5C6005EAB07 /* iSpyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSpyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		104D0B3E19CDD5C6005EAB07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		104D0B3F19CDD5C6005EAB07 /* iSpyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSpyTests.swift; sourceTree = "<group>"; };
+		10E0338219F98A910063D3F5 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,7 @@
 				104D0B2D19CDD5C6005EAB07 /* Main.storyboard */,
 				104D0B3019CDD5C6005EAB07 /* Images.xcassets */,
 				104D0B3219CDD5C6005EAB07 /* LaunchScreen.xib */,
+				10E0338219F98A910063D3F5 /* SwiftyJSON.swift */,
 				104D0B2719CDD5C6005EAB07 /* Supporting Files */,
 			);
 			path = iSpy;
@@ -213,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10E0338319F98A910063D3F5 /* SwiftyJSON.swift in Sources */,
 				104D0B2C19CDD5C6005EAB07 /* ViewController.swift in Sources */,
 				104D0B2A19CDD5C6005EAB07 /* AppDelegate.swift in Sources */,
 			);
@@ -223,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				104D0B4019CDD5C6005EAB07 /* iSpyTests.swift in Sources */,
+				10E0338419F98A910063D3F5 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

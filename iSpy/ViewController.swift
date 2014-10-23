@@ -9,6 +9,7 @@
 import UIKit
 import CoreMotion
 
+
     //number formatter
     extension Double {
     func format(f: String) -> String {
