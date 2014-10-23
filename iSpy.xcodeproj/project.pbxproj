@@ -161,6 +161,7 @@
 				TargetAttributes = {
 					104D0B2319CDD5C6005EAB07 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = KU3MSY6PV2;
 					};
 					104D0B3819CDD5C6005EAB07 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -338,7 +339,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = iSpy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -348,7 +351,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = iSpy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -407,6 +412,7 @@
 				104D0B4519CDD5C6005EAB07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		104D0B4619CDD5C6005EAB07 /* Build configuration list for PBXNativeTarget "iSpyTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +421,7 @@
 				104D0B4819CDD5C6005EAB07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
