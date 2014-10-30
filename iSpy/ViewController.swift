@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     var motionQueue = NSOperationQueue()
     var gyroQueue = NSOperationQueue()
     var check: Bool = false
+    var sample:[Node] = [Node]()
    
     // temp labels on app to display #s on screen
     @IBOutlet weak var accelerometerX: UILabel!
@@ -52,8 +53,8 @@ class ViewController: UIViewController {
     func collectData(){
         // units are seconds so 1/30 = 30x a second
         let precision = ".04"
-        self.motionManager.deviceMotionUpdateInterval = 1/5
-        self.motionManager.gyroUpdateInterval = 1/5
+        self.motionManager.deviceMotionUpdateInterval = 1/6
+        //self.motionManager.gyroUpdateInterval = 1/5
         
         
         if(self.motionManager.deviceMotionAvailable){
@@ -62,15 +63,22 @@ class ViewController: UIViewController {
                 dispatch_async(dispatch_get_main_queue()) {
                     
                         if(self.motionManager.deviceMotion != nil){
+                            let node:Node = Node(ax: motionData.userAcceleration.x.format(precision),ay: motionData.userAcceleration.y.format(precision),az: motionData.userAcceleration.z.format(precision),gx: motionData.rotationRate.x.format(precision),gy: motionData.rotationRate.y.format(precision),gz: motionData.rotationRate.z.format(precision))
+                            
+                            self.sample.append(node)
+                            
+                            if(self.sample.count == 20){
+                                self.sendSample()
+                            }
                             self.accelerometerX.text = "\(motionData.userAcceleration.x.format(precision))"
-                            
-                            println("Accelerometer x: \(motionData.userAcceleration.x) y: \(motionData.userAcceleration.y) z: \(motionData.userAcceleration.z)Time: \(self.getTimestamp())")
-                            
                             self.accelerometerY.text = "\(motionData.userAcceleration.y.format(precision))"
                             self.accelerometerZ.text = "\(motionData.userAcceleration.z.format(precision))"
                             self.gyroX.text = "\(motionData.rotationRate.x.format(precision))"
                             self.gyroY.text = "\(motionData.rotationRate.y.format(precision))"
                             self.gyroZ.text = "\(motionData.rotationRate.z.format(precision))"
+                            
+                            
+                         //   println("Accelerometer x: \(motionData.userAcceleration.x) y: \(motionData.userAcceleration.y) z: \(motionData.userAcceleration.z)Time: \(self.getTimestamp())")
                             
                          
                         }
@@ -83,10 +91,24 @@ class ViewController: UIViewController {
     
     func stopCollecting() {
         self.motionManager.stopDeviceMotionUpdates()
+        self.sample.removeAll()
     }
     
     func getTimestamp() -> String {
         return NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .ShortStyle, timeStyle: .LongStyle)
+    }
+    
+    func sendSample(){
+        var temp:String = String()
+        for(var i = 0; i < 20; i++){
+            temp += self.sample[i].ToString()
+            if(i != 19){
+                temp += ","
+            }
+        }
+        
+        println(temp)
+        self.sample.removeAll()
     }
 
     override func viewDidLoad() {

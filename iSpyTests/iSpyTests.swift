@@ -9,12 +9,12 @@
 import UIKit
 import XCTest
 
-extension Double {
+/*extension Double {
     func format(f: String) -> String {
         return NSString(format: "%\(f)f", self)
     }
 }
-
+*/
 class iSpyTests: XCTestCase {
     
     
@@ -34,7 +34,7 @@ class iSpyTests: XCTestCase {
         XCTAssert(true, "Pass")
     }
     
-    func formatTest(){
+  /*  func formatTest(){
         let x = 0.123456789
         let y = x.format(".04")
         XCTAssertEqual(y,"0.123", "should equal 0.123")
@@ -52,6 +52,29 @@ class iSpyTests: XCTestCase {
         let y = x.format(".05")
         XCTAssertEqual(y, "0.0", "should not be equal")
     }
+
+*/
+    func testFillSample(){
+        let x = ViewController()
+        
+        for(var i = 0; i < 20; i++){
+            let node = Node(ax: i.description, ay: i.description, az: i.description, gx: i.description, gy: i.description, gz: i.description)
+            x.sample.append(node)
+        }
+        XCTAssertEqual(x.sample.count, 20, "should have 20 elements")
+    }
+    
+    func testEmptySample(){
+        let x = ViewController()
+    
+    for(var i = 0; i < 20; i++){
+        let node = Node(ax: i.description, ay: i.description, az: i.description, gx: i.description, gy: i.description, gz: i.description)
+        x.sample.append(node)
+    }
+        x.sendSample()
+        XCTAssertEqual(x.sample.count, 0, "should have 0 elements")
+    }
+
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
@@ -59,5 +82,6 @@ class iSpyTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+
     
 }
