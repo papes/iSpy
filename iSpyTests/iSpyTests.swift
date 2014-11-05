@@ -71,7 +71,7 @@ class iSpyTests: XCTestCase {
         let node = Node(ax: i.description, ay: i.description, az: i.description, gx: i.description, gy: i.description, gz: i.description)
         x.sample.append(node)
     }
-        x.sendSample()
+        x.formatJSON()
         XCTAssertEqual(x.sample.count, 0, "should have 0 elements")
     }
 

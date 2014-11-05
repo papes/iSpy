@@ -9,14 +9,30 @@
 /* Begin PBXBuildFile section */
 		104D0B2A19CDD5C6005EAB07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104D0B2919CDD5C6005EAB07 /* AppDelegate.swift */; };
 		104D0B2C19CDD5C6005EAB07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104D0B2B19CDD5C6005EAB07 /* ViewController.swift */; };
-		104D0B2F19CDD5C6005EAB07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104D0B2D19CDD5C6005EAB07 /* Main.storyboard */; };
 		104D0B3119CDD5C6005EAB07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 104D0B3019CDD5C6005EAB07 /* Images.xcassets */; };
-		104D0B3419CDD5C6005EAB07 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104D0B3219CDD5C6005EAB07 /* LaunchScreen.xib */; };
 		104D0B4019CDD5C6005EAB07 /* iSpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104D0B3F19CDD5C6005EAB07 /* iSpyTests.swift */; };
 		10AE9BEE19F9923C00590253 /* JSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BED19F9923C00590253 /* JSONTests.swift */; };
 		10AE9BF01A019DA700590253 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BEF1A019DA700590253 /* Node.swift */; };
 		10AE9BF11A01AACD00590253 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104D0B2B19CDD5C6005EAB07 /* ViewController.swift */; };
 		10AE9BF21A01ABB600590253 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BEF1A019DA700590253 /* Node.swift */; };
+		10AE9BFF1A09D71C00590253 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BF71A09D71C00590253 /* GCD.swift */; };
+		10AE9C001A09D71C00590253 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BF71A09D71C00590253 /* GCD.swift */; };
+		10AE9C011A09D71C00590253 /* Net.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BF81A09D71C00590253 /* Net.swift */; };
+		10AE9C021A09D71C00590253 /* Net.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BF81A09D71C00590253 /* Net.swift */; };
+		10AE9C031A09D71C00590253 /* NetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BF91A09D71C00590253 /* NetData.swift */; };
+		10AE9C041A09D71C00590253 /* NetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BF91A09D71C00590253 /* NetData.swift */; };
+		10AE9C051A09D71C00590253 /* NetDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BFA1A09D71C00590253 /* NetDownloadTask.swift */; };
+		10AE9C061A09D71C00590253 /* NetDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BFA1A09D71C00590253 /* NetDownloadTask.swift */; };
+		10AE9C071A09D71C00590253 /* NetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BFB1A09D71C00590253 /* NetHelper.swift */; };
+		10AE9C081A09D71C00590253 /* NetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BFB1A09D71C00590253 /* NetHelper.swift */; };
+		10AE9C091A09D71C00590253 /* NetRequestSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BFC1A09D71C00590253 /* NetRequestSerialization.swift */; };
+		10AE9C0A1A09D71C00590253 /* NetRequestSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BFC1A09D71C00590253 /* NetRequestSerialization.swift */; };
+		10AE9C0B1A09D71C00590253 /* NetResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BFD1A09D71C00590253 /* NetResponseData.swift */; };
+		10AE9C0C1A09D71C00590253 /* NetResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BFD1A09D71C00590253 /* NetResponseData.swift */; };
+		10AE9C0D1A09D71C00590253 /* NetUploadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BFE1A09D71C00590253 /* NetUploadTask.swift */; };
+		10AE9C0E1A09D71C00590253 /* NetUploadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AE9BFE1A09D71C00590253 /* NetUploadTask.swift */; };
+		10AE9C0F1A09D9A300590253 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104D0B2D19CDD5C6005EAB07 /* Main.storyboard */; };
+		10AE9C101A09D9AE00590253 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104D0B3219CDD5C6005EAB07 /* LaunchScreen.xib */; };
 		10E0338319F98A910063D3F5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0338219F98A910063D3F5 /* SwiftyJSON.swift */; };
 		10E0338419F98A910063D3F5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0338219F98A910063D3F5 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +60,14 @@
 		104D0B3F19CDD5C6005EAB07 /* iSpyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSpyTests.swift; sourceTree = "<group>"; };
 		10AE9BED19F9923C00590253 /* JSONTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTests.swift; sourceTree = "<group>"; };
 		10AE9BEF1A019DA700590253 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		10AE9BF71A09D71C00590253 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
+		10AE9BF81A09D71C00590253 /* Net.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Net.swift; sourceTree = "<group>"; };
+		10AE9BF91A09D71C00590253 /* NetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetData.swift; sourceTree = "<group>"; };
+		10AE9BFA1A09D71C00590253 /* NetDownloadTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetDownloadTask.swift; sourceTree = "<group>"; };
+		10AE9BFB1A09D71C00590253 /* NetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetHelper.swift; sourceTree = "<group>"; };
+		10AE9BFC1A09D71C00590253 /* NetRequestSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetRequestSerialization.swift; sourceTree = "<group>"; };
+		10AE9BFD1A09D71C00590253 /* NetResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetResponseData.swift; sourceTree = "<group>"; };
+		10AE9BFE1A09D71C00590253 /* NetUploadTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetUploadTask.swift; sourceTree = "<group>"; };
 		10E0338219F98A910063D3F5 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +110,7 @@
 		104D0B2619CDD5C6005EAB07 /* iSpy */ = {
 			isa = PBXGroup;
 			children = (
+				10AE9BF61A09D71C00590253 /* Net */,
 				104D0B2919CDD5C6005EAB07 /* AppDelegate.swift */,
 				104D0B2B19CDD5C6005EAB07 /* ViewController.swift */,
 				104D0B2D19CDD5C6005EAB07 /* Main.storyboard */,
@@ -122,6 +147,21 @@
 				104D0B3E19CDD5C6005EAB07 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		10AE9BF61A09D71C00590253 /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				10AE9BF71A09D71C00590253 /* GCD.swift */,
+				10AE9BF81A09D71C00590253 /* Net.swift */,
+				10AE9BF91A09D71C00590253 /* NetData.swift */,
+				10AE9BFA1A09D71C00590253 /* NetDownloadTask.swift */,
+				10AE9BFB1A09D71C00590253 /* NetHelper.swift */,
+				10AE9BFC1A09D71C00590253 /* NetRequestSerialization.swift */,
+				10AE9BFD1A09D71C00590253 /* NetResponseData.swift */,
+				10AE9BFE1A09D71C00590253 /* NetUploadTask.swift */,
+			);
+			path = Net;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,8 +245,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				104D0B2F19CDD5C6005EAB07 /* Main.storyboard in Resources */,
-				104D0B3419CDD5C6005EAB07 /* LaunchScreen.xib in Resources */,
+				10AE9C101A09D9AE00590253 /* LaunchScreen.xib in Resources */,
+				10AE9C0F1A09D9A300590253 /* Main.storyboard in Resources */,
 				104D0B3119CDD5C6005EAB07 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,10 +265,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10AE9C0B1A09D71C00590253 /* NetResponseData.swift in Sources */,
+				10AE9C051A09D71C00590253 /* NetDownloadTask.swift in Sources */,
+				10AE9BFF1A09D71C00590253 /* GCD.swift in Sources */,
+				10AE9C031A09D71C00590253 /* NetData.swift in Sources */,
 				10E0338319F98A910063D3F5 /* SwiftyJSON.swift in Sources */,
 				104D0B2C19CDD5C6005EAB07 /* ViewController.swift in Sources */,
+				10AE9C0D1A09D71C00590253 /* NetUploadTask.swift in Sources */,
 				104D0B2A19CDD5C6005EAB07 /* AppDelegate.swift in Sources */,
+				10AE9C071A09D71C00590253 /* NetHelper.swift in Sources */,
 				10AE9BF01A019DA700590253 /* Node.swift in Sources */,
+				10AE9C091A09D71C00590253 /* NetRequestSerialization.swift in Sources */,
+				10AE9C011A09D71C00590253 /* Net.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,11 +284,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10AE9C041A09D71C00590253 /* NetData.swift in Sources */,
+				10AE9C001A09D71C00590253 /* GCD.swift in Sources */,
 				104D0B4019CDD5C6005EAB07 /* iSpyTests.swift in Sources */,
+				10AE9C081A09D71C00590253 /* NetHelper.swift in Sources */,
+				10AE9C061A09D71C00590253 /* NetDownloadTask.swift in Sources */,
+				10AE9C021A09D71C00590253 /* Net.swift in Sources */,
 				10AE9BF21A01ABB600590253 /* Node.swift in Sources */,
 				10AE9BEE19F9923C00590253 /* JSONTests.swift in Sources */,
 				10AE9BF11A01AACD00590253 /* ViewController.swift in Sources */,
+				10AE9C0A1A09D71C00590253 /* NetRequestSerialization.swift in Sources */,
+				10AE9C0E1A09D71C00590253 /* NetUploadTask.swift in Sources */,
 				10E0338419F98A910063D3F5 /* SwiftyJSON.swift in Sources */,
+				10AE9C0C1A09D71C00590253 /* NetResponseData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

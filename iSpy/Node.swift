@@ -26,7 +26,7 @@ class Node{
     }
     
     func ToString() -> String {
-        return ("[" + self.accelerometerx + "," + self.accelerometery + "," + self.accelerometerz + "," + self.gyrox
-        + "," + self.gyroy + "," + self.gyroz + "]")
+        return (self.accelerometerx + "," + self.accelerometery + "," + self.accelerometerz + "," + self.gyrox
+        + "," + self.gyroy + "," + self.gyroz)
     }
 }

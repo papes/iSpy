@@ -68,7 +68,7 @@ class ViewController: UIViewController {
                             self.sample.append(node)
                             
                             if(self.sample.count == 20){
-                                self.sendSample()
+                                self.formatJSON()
                             }
                             self.accelerometerX.text = "\(motionData.userAcceleration.x.format(precision))"
                             self.accelerometerY.text = "\(motionData.userAcceleration.y.format(precision))"
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
         return NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .ShortStyle, timeStyle: .LongStyle)
     }
     
-    func sendSample(){
+    func formatJSON(){
         var temp:String = String()
         for(var i = 0; i < 20; i++){
             temp += self.sample[i].ToString()
@@ -107,8 +107,24 @@ class ViewController: UIViewController {
             }
         }
         
-        println(temp)
+        let json:NSDictionary = ["Data":temp]
+        self.sendData(json)
+        
+        //println(json)
         self.sample.removeAll()
+    }
+    
+    func sendData(json:NSDictionary){
+        let net = Net()
+        let url = "http://myfirstelasticbeans-ispytest.elasticbeanstalk.com/indextest.jsp"
+
+        net.POST(url, params: json, successHandler: { responseData in
+            let result = responseData.json(error: nil)
+            NSLog("result: \(result)")
+            }, failureHandler: { error in
+                NSLog("Error")
+        })
+        
     }
 
     override func viewDidLoad() {
