@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     // instance variables
     let motionManager: CMMotionManager = CMMotionManager()
     var motionQueue = NSOperationQueue()
-    var gyroQueue = NSOperationQueue()
     var check: Bool = false
     var sample:[Node] = [Node]()
    
@@ -51,11 +50,10 @@ class ViewController: UIViewController {
     }
     
     func collectData(){
-        // units are seconds so 1/30 = 30x a second
+        //We want 4 digits after the decimal point
         let precision = ".04"
+        // units are seconds so 1/30 = 30x a second
         self.motionManager.deviceMotionUpdateInterval = 1/6
-        //self.motionManager.gyroUpdateInterval = 1/5
-        
         
         if(self.motionManager.deviceMotionAvailable){
             self.motionManager.startDeviceMotionUpdatesUsingReferenceFrame(CMAttitudeReferenceFrameXArbitraryCorrectedZVertical, toQueue: motionQueue, withHandler: {(motionData:CMDeviceMotion!,error:NSError!) in
@@ -99,32 +97,77 @@ class ViewController: UIViewController {
     }
     
     func formatJSON(){
-        var temp:String = String()
+        var values = [String]()
         for(var i = 0; i < 20; i++){
-            temp += self.sample[i].ToString()
-            if(i != 19){
-                temp += ","
-            }
+            sample[i].AppendToCollection(&values)
+            println(sample[i].accelerometerx)
         }
+       println(values)
+      let json:NSDictionary = ["data":values]
+       println(json)
         
-        let json:NSDictionary = ["Data":temp]
-        self.sendData(json)
-        
-        //println(json)
-        self.sample.removeAll()
+       self.sendData(json)
+       self.sample.removeAll()
     }
     
     func sendData(json:NSDictionary){
-        let net = Net()
-        let url = "http://myfirstelasticbeans-ispytest.elasticbeanstalk.com/indextest.jsp"
 
-        net.POST(url, params: json, successHandler: { responseData in
-            let result = responseData.json(error: nil)
-            NSLog("result: \(result)")
-            }, failureHandler: { error in
-                NSLog("Error")
+        Cycle.post("http://ispyj7t7.elasticbeanstalk.com/GetPhoneData",
+            requestObject: json,
+            requestProcessors: [JSONProcessor()],
+            responseProcessors: [JSONProcessor()],
+            completionHandler: {(cycle, error) in
+                println("\(cycle.response.statusCode)")
+                var header = cycle.response.valueForHTTPHeaderField("content-type")
+                println("\(header)")
+                println("\(cycle.response.textEncoding)")
+                println("\(cycle.response.text)")
+                println("\(cycle.response.object)")
+        })
+/*
+        var err: NSError?
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://ispyj7t7.elasticbeanstalk.com/GetPhoneData")!)
+        var session = NSURLSession.sharedSession()
+        request.HTTPMethod = "POST"
+        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(json, options: nil, error: &err)
+        println(request.HTTPBody)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        
+
+        
+        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            println("Response: \(response)")
+            var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
+            println("Body: \(strData)")
+            var err: NSError?
+            var json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as? NSDictionary
+            
+            // Did the JSONObjectWithData constructor return an error? If so, log the error to the console
+            if(err != nil) {
+                println(err!.localizedDescription)
+                let jsonStr = NSString(data: data, encoding: NSUTF8StringEncoding)
+                println("Error could not parse JSON: '\(jsonStr)'")
+            }
+            else {
+                // The JSONObjectWithData constructor didn't return an error. But, we should still
+                // check and make sure that json has a value using optional binding.
+                if let parseJSON = json {
+                    // Okay, the parsedJSON is here, let's get the value for 'success' out of it
+                    var success = parseJSON["success"] as? Int
+                    println("Success: \(success)")
+                }
+                else {
+                    // Woa, okay the json object was nil, something went worng. Maybe the server isn't running?
+                    let jsonStr = NSString(data: data, encoding: NSUTF8StringEncoding)
+                    println("Error could not parse JSON: \(jsonStr)")
+                }
+            }
         })
         
+        task.resume()
+         */
     }
 
     override func viewDidLoad() {

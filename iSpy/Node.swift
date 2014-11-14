@@ -25,8 +25,12 @@ class Node{
         self.gyroz = gz
     }
     
-    func ToString() -> String {
-        return (self.accelerometerx + "," + self.accelerometery + "," + self.accelerometerz + "," + self.gyrox
-        + "," + self.gyroy + "," + self.gyroz)
+    func AppendToCollection(inout arr: [String]){
+        arr.append(self.accelerometerx)
+        arr.append(self.accelerometery)
+        arr.append(self.accelerometerz)
+        arr.append(self.gyrox)
+        arr.append(self.gyroy)
+        arr.append(self.gyroz)
     }
 }
