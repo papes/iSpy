@@ -54,15 +54,24 @@ class iSpyTests: XCTestCase {
     }
 
 */
-    func testFillSample(){
+    func testCollection(){
         let x = ViewController()
         
         for(var i = 0; i < 20; i++){
             let node = Node(ax: i.description, ay: i.description, az: i.description, gx: i.description, gy: i.description, gz: i.description)
             x.sample.append(node)
         }
-        XCTAssertEqual(x.sample.count, 20, "should have 20 elements")
+        XCTAssertEqual(x.sample.count, 20, "should have 20 nodes")
+        
+        var values = [String]()
+        for(var i = 0; i < 20; i++){
+            x.sample[i].AppendToCollection(&values)
+        }
+        XCTAssertEqual(values.count, 120, "should have 120 pieces of data")
+        
     }
+    
+
     
     func testEmptySample(){
         let x = ViewController()

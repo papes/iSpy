@@ -1,12 +1,10 @@
-//
-//  Node.swift
-//  iSpy
-//
-//  Created by brett davis on 10/29/14.
-//  Copyright (c) 2014 brett davis. All rights reserved.
-//
-
 import Foundation
+
+/**
+* @author      Brett Davis
+* @version     1.0
+* @since       2014-10-29
+*/
 
 class Node{
     var accelerometerx:String
@@ -25,6 +23,10 @@ class Node{
         self.gyroz = gz
     }
     
+    /*
+    * Takes node and appends instance variables in order to a collection of strings
+    * @param arr is a mutable array to which the instance variables are appended to
+    */
     func AppendToCollection(inout arr: [String]){
         arr.append(self.accelerometerx)
         arr.append(self.accelerometery)
